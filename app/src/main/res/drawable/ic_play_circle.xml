@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- 원형 배경 -->
+    <path
+        android:fillColor="#AA000000"
+    android:pathData="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2z"/>
+
+    <!-- 재생 삼각형 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M10,8.64v6.72c0,0.54 0.6,0.86 1.05,0.57l5.19,-3.36c0.42,-0.27 0.42,-0.87 0,-1.14L11.05,8.07C10.6,7.78 10,8.1 10,8.64z"/>
+</vector>

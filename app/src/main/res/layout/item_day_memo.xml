@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="3dp"> <!-- 패딩을 12dp → 8dp로 줄임 -->
+
+    <!-- 상단: 시간 -->
+    <LinearLayout
+        android:id="@+id/dateTimeLayout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="2dp"> <!-- 하단 간격 아주 살짝만 -->
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2025-07-18"
+            android:textSize="14sp"
+            android:layout_marginEnd="4dp" /> <!-- 마진도 줄임 -->
+
+        <TextView
+            android:id="@+id/tv_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오후 1시 30분"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- 하단: 내용 + 삭제(X) -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="0dp"> <!-- 마진 완전 제거 -->
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="내용 내용 내용"
+            android:textStyle="bold"
+            android:textSize="16sp"
+             />
+
+        <!-- 삭제 버튼 (X) -->
+        <TextView
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="❎"
+            android:textSize="14sp"
+            android:padding="2dp"
+            android:contentDescription="삭제"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"/>
+    </LinearLayout>
+
+</LinearLayout>

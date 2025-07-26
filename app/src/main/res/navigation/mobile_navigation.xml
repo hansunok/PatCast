@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_info">
+
+    <fragment
+        android:id="@+id/navigation_info"
+        android:name="com.hansunok.petcast.InfoFragment"
+        android:label="@string/title_info"
+        tools:layout="@layout/fragment_info" />
+
+    <fragment
+        android:id="@+id/navigation_diary"
+        android:name="com.hansunok.petcast.DiaryFragment"
+        android:label="@string/title_diary"
+        tools:layout="@layout/fragment_diary" />
+
+    <fragment
+        android:id="@+id/navigation_record"
+        android:name="com.hansunok.petcast.RecordFragment"
+        android:label="@string/title_record"
+        tools:layout="@layout/fragment_record" />
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.hansunok.petcast.SettingFragment"
+        android:label="@string/title_setting"
+        tools:layout="@layout/fragment_setting" />
+
+
+</navigation>

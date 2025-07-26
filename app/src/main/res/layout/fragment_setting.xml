@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ScrollView
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 설정 제목 -->
+        <TextView
+            android:text="About"
+            android:textSize="22sp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- 하위 서브 메뉴 -->
+        <TextView
+            android:id="@+id/aboutTextView"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:lineSpacingExtra="8dp"
+            android:lineSpacingMultiplier="1.2"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            >
+
+            <TextView
+                android:id="@+id/downData"
+                android:text="⬇️텍스트 백업"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Space
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"/>
+
+            <!-- 하위 서브 메뉴 -->
+            <TextView
+                android:id="@+id/downVideo"
+                android:text="⬇️동영상 백업"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Space
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/downImage"
+                android:text="⬇️사진 백업"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Space
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <!-- 설정 제목 -->
+        <TextView
+            android:text="설정"
+            android:textSize="22sp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- 카메라 권한 사용 + 물음표 버튼 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_camera"
+                android:text="카메라 권한 사용"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <ImageButton
+                android:id="@+id/btn_info_camera"
+                android:src="@android:drawable/ic_menu_help"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:contentDescription="카메라 권한 설명"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- 갤러리 권한 사용 + 물음표 버튼 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_image"
+                android:text="이미지 권한 사용"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <ImageButton
+                android:id="@+id/btn_info_image"
+                android:src="@android:drawable/ic_menu_help"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:contentDescription="이미지 권한 설명"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- 동영상 권한 사용 + 물음표 버튼 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_video"
+                android:text="동영상 권한 사용"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <ImageButton
+                android:id="@+id/btn_info_video"
+                android:src="@android:drawable/ic_menu_help"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:contentDescription="동영상 권한 설명"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!-- 도움말 제목 -->
+        <TextView
+            android:text="도움말"
+            android:textSize="22sp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:paddingTop="4dp">
+
+            <!-- 아이콘 -->
+            <ImageView
+                android:src="@drawable/icon_pet_info"
+                app:tint="@color/purple_500"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="정보"
+                android:layout_marginEnd="4dp" />
+
+            <!-- 설명 + 하위 텍스트 -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <!-- 상위 설명 -->
+                <TextView
+                    android:text="@string/title_info"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="• 펫의 정보를 입력, 수정, 삭제 할수 있습니다."
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <!-- 도움말 아래 기능 메뉴 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:paddingTop="4dp">
+
+            <!-- 아이콘 -->
+            <ImageView
+                android:src="@drawable/icon_list"
+                app:tint="@color/purple_500"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="앨범"
+                android:layout_marginEnd="4dp" />
+
+            <!-- 설명 + 하위 텍스트 -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <!-- 상위 설명 -->
+                <TextView
+                    android:text="@string/title_diary"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!-- 하위 서브 메뉴 -->
+                <TextView
+                    android:text="• 펫정보에 등록된 이름별로 메모, 사진, 동영상을"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="  등록할수 있습니다. "
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="• 등록된 내용을 공유하기 버튼으로 공유할수 있습니다."
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:paddingTop="4dp">
+
+            <!-- 아이콘 -->
+            <ImageView
+                android:src="@drawable/icon_myrecord"
+                app:tint="@color/purple_500"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="기록"
+                android:layout_marginEnd="4dp" />
+
+            <!-- 설명 + 하위 텍스트 -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <!-- 상위 설명 -->
+                <TextView
+                    android:text="@string/title_record"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!-- 하위 서브 메뉴 -->
+                <TextView
+                    android:text="• 펫정보에 등록된 이름별로 메모를 등록할수 있습니다. "
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="• 등록된 메모는 월별, 일별로 조회 할수 있습니다."
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="• 자동입력 할수 있는 버튼을 생성 할수 있습니다. "
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:indeterminate="true"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</FrameLayout>

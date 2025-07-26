@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+
+    <!-- 배경 원 -->
+    <path
+        android:fillColor="#FFCC80"
+        android:pathData="M32,2
+            A30,30 0 1,1 31.99,2Z"/>
+
+    <!-- 얼굴 원 -->
+    <path
+        android:fillColor="#6D4C41"
+        android:pathData="M32,16
+            c-10,0 -10,14 -10,14
+            s0,14 10,14
+            10,-14 10,-14
+            -0,-14 -10,-14z"/>
+
+    <!-- 왼쪽 눈 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M18,28
+            a4,4 0 1,0 8,0
+            a4,4 0 1,0 -8,0z" />
+
+    <!-- 오른쪽 눈 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M38,28
+            a4,4 0 1,0 8,0
+            a4,4 0 1,0 -8,0z" />
+
+    <!-- 왼쪽 동공 -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M20,28
+            a2,2 0 1,0 4,0
+            a2,2 0 1,0 -4,0z" />
+
+    <!-- 오른쪽 동공 -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M40,28
+            a2,2 0 1,0 4,0
+            a2,2 0 1,0 -4,0z" />
+
+    <!-- 코 -->
+    <path
+        android:fillColor="#3E2723"
+        android:pathData="M32,40
+            c-4,2 -8,1 -8,1
+            s3,3 8,3
+            8,-3 8,-3
+            -4,1 -8,-1z"/>
+
+</vector>

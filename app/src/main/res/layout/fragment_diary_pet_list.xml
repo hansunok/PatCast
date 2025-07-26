@@ -1,0 +1,39 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 메인 콘텐츠 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <include layout="@layout/fragment_diary_pet_write_common" />
+
+        <!-- 등록된 내용 리스트 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/registeredItemsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
+
+    <!-- fab_add 버튼도 여기 넣기 -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="@color/teal_700"
+        app:tint="@android:color/white"
+        android:contentDescription="추가" />
+
+</FrameLayout>

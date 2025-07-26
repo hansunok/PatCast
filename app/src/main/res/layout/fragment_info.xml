@@ -1,0 +1,252 @@
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 메인 콘텐츠 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp">
+            <!-- 입력 폼 영역 -->
+            <ScrollView
+                android:id="@+id/writeLayoutView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_border"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/closeTopBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="닫기"
+                            android:src="@drawable/ic_close"
+                            app:tint="@android:color/black" />
+                    </LinearLayout>
+
+                    <!-- 상단 입력: 이미지 + 정보 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="16dp">
+
+                        <!-- 이미지 -->
+                        <ImageView
+                            android:id="@+id/imgPet"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/image_border"
+                            android:clickable="true"
+                            android:contentDescription="펫 대표 이미지"
+                            android:focusable="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/pet_profile" />
+
+                        <Space
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content" />
+
+                        <!-- 텍스트 필드들 -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <!-- 이름 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingBottom="4dp">
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="이름"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editPetName"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+                            </LinearLayout>
+
+                            <!-- 생년월일 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingBottom="4dp">
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="생년월일"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editBirthDate"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:focusable="false"
+                                    android:hint="예: 2023-01-01"
+                                    android:inputType="date" />
+                            </LinearLayout>
+
+                            <!-- 성별 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="성별"
+                                    android:textSize="16sp" />
+
+                                <RadioGroup
+                                    android:id="@+id/genderGroup"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/radioMale"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="남" />
+
+                                    <RadioButton
+                                        android:id="@+id/radioFemale"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="여" />
+                                </RadioGroup>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- 소개 -->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="4dp"
+                        android:text="소개"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="top"
+                        android:inputType="textMultiLine" />
+
+                    <!-- 버튼들을 감싸는 부모 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnAddPet"
+                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="41dp"
+                                android:layout_marginEnd="8dp"
+                                android:text="등록" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnDeletePet"
+                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="41dp"
+                                android:layout_marginEnd="8dp"
+                                android:text="삭제" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnResetForm"
+                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="41dp"
+                                android:text="리셋" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+            <!-- 하단 RecyclerView (목록, 2개 항목만 보이게) -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerPets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/material_dynamic_neutral90"
+                android:clipToPadding="false"
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <!-- fab_add 버튼도 여기 넣기 -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:contentDescription="추가"
+            android:src="@android:drawable/ic_input_add"
+            app:backgroundTint="@color/teal_700"
+            app:tint="@android:color/white" />
+
+
+    </FrameLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start"
+        android:paddingStart="0dp">
+
+        <!-- 날짜 텍스트 -->
+        <TextView
+            android:id="@+id/tvDateText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2025년 7월 9일"
+            android:textSize="14sp"
+            android:textColor="#FF5722" />
+
+        <!-- 버튼을 담을 LinearLayout -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">  <!-- 버튼들을 오른쪽 정렬 -->
+
+            <ImageView
+                android:id="@+id/shareView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="공유"
+                android:src="@drawable/ic_btn_share" />
+
+            <ImageView
+                android:id="@+id/deleteView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="삭제"
+                android:src="@drawable/ic_btn_delete_forever" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 메모 텍스트 -->
+    <TextView
+        android:id="@+id/tvMemoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#000000" />
+
+    <!-- 미디어 썸네일 가로 스크롤 목록 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMedia"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal" />
+
+
+</LinearLayout>

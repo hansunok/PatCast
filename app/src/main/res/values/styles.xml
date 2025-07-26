@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyCustomTabText" parent="TextAppearance.Material3.BodyMedium">
+        <item name="textAllCaps">false</item>
+    </style>
+    <style name="SpinnerTimePickerDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:timePickerMode">spinner</item>
+    </style>
+</resources>

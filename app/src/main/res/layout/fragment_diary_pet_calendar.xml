@@ -1,0 +1,93 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/container_view"
+        >
+            <!-- 헤더: 월/년 + 이전/다음 버튼 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="7dp">
+
+                <ImageButton
+                    android:id="@+id/btn_prev_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_left"
+                    android:background="@null"
+                    android:contentDescription="Previous month" />
+
+                <TextView
+                    android:id="@+id/tv_month_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2025년 6월"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:padding="8dp" />
+
+                <ImageButton
+                    android:id="@+id/btn_next_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right"
+                    android:background="@null"
+                    android:contentDescription="Next month" />
+            </LinearLayout>
+
+            <!-- 달력 뷰 -->
+            <GridView
+                android:id="@+id/calendar_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="7"
+                android:verticalSpacing="8dp"
+                android:horizontalSpacing="8dp"
+                android:stretchMode="columnWidth"
+                android:gravity="center" />
+        <!-- 메인 콘텐츠 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+            <!-- 등록된 내용 리스트 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/registeredItemsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <include layout="@layout/fragment_diary_pet_write_common" />
+
+    <!-- fab_add 버튼도 여기 넣기 -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="@color/teal_700"
+        app:tint="@android:color/white"
+        android:contentDescription="추가" />
+
+</FrameLayout>

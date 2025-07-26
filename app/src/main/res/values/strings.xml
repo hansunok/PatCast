@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PetCast</string>
+    <string name="title_info">펫정보</string>
+    <string name="title_diary">앨범</string>
+    <string name="title_record">기록</string>
+    <string name="title_setting">셋팅</string>
+    <!-- 카카오 네이티브 앱 키 -->
+    <string name="kakao_native_app_key">964853b0e1fbfd0cbd807b861a7f9756</string>
+    <!-- 공유 텍스트 -->
+    <string name="share_text">우리 반려동물의 추억을 함께 해요!</string>
+</resources>

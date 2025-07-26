@@ -1,0 +1,180 @@
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:clickable="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/container_view"
+        >
+            <!-- 헤더: 월/년 + 이전/다음 버튼 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="7dp">
+
+                <ImageButton
+                    android:id="@+id/btn_prev_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_left"
+                    android:background="@null"
+                    android:contentDescription="Previous month" />
+
+                <TextView
+                    android:id="@+id/tv_month_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2025년 6월"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:padding="8dp" />
+
+                <ImageButton
+                    android:id="@+id/btn_next_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right"
+                    android:background="@null"
+                    android:contentDescription="Next month" />
+            </LinearLayout>
+
+            <!-- 달력 뷰 -->
+            <GridView
+                android:id="@+id/calendar_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="7"
+                android:verticalSpacing="8dp"
+                android:horizontalSpacing="8dp"
+                android:stretchMode="columnWidth"
+                android:visibility="visible"
+                android:gravity="center" />
+
+            <LinearLayout
+                android:id="@+id/memoLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="2dp"
+                android:padding="4dp">
+
+            <!-- 첫 번째 줄: 시간 버튼 + 시간 텍스트 -->
+            <LinearLayout
+                android:id="@+id/timeRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_calendar"
+                    android:contentDescription="Calendar icon"
+                    app:tint="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/tv_selected_date"
+                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="15sp"
+                    android:layout_marginStart="1dp"
+                    android:textColor="#333333" />
+
+                <TextView
+                    android:id="@+id/textTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:layout_marginStart="8dp"
+                    />
+
+                <Button
+                    android:id="@+id/buttonSetTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🕣"
+                    android:textSize="18sp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:padding="4dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="시간 설정"/>
+
+            </LinearLayout>
+
+            <!-- 두 번째 줄: 메모 + 저장 -->
+            <LinearLayout
+                android:id="@+id/memoRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="0dp">
+
+                <EditText
+                    android:id="@+id/etMemo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="메모를 입력하세요"
+                    android:inputType="textMultiLine"
+                    android:minLines="1"
+                    android:maxLines="3"
+                    android:background="@android:drawable/edit_text" />
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✔️"
+                    android:textSize="18sp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:padding="4dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="저장"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.hansunok.petcast.FlowLayout
+            android:id="@+id/kewordContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="0dp"
+            android:padding="6dp">
+        </com.hansunok.petcast.FlowLayout>
+
+        <!-- 4. 메모 리스트 (RecyclerView) -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMemoList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbars="vertical"/>
+
+    </LinearLayout>
+
+</FrameLayout>
+</androidx.core.widget.NestedScrollView>

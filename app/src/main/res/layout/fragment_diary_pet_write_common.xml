@@ -1,0 +1,167 @@
+<!-- 글쓰기 영역 -->
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:id="@+id/writeLayoutView"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="@drawable/bg_border"
+android:orientation="vertical"
+android:layout_marginTop="16dp"
+android:layout_marginBottom="30dp"
+android:visibility="gone">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:padding="8dp">
+
+        <!-- 왼쪽: selCalLayout -->
+        <LinearLayout
+            android:id="@+id/selCalLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            android:layout_alignParentStart="true">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_calendar"
+                android:contentDescription="Calendar icon"
+                android:layout_marginEnd="8dp"
+                app:tint="@android:color/black" />
+
+            <TextView
+                android:id="@+id/tv_selected_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="선택한 날짜: "
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333" />
+        </LinearLayout>
+
+        <!-- 오른쪽: 닫기 버튼 -->
+        <ImageButton
+            android:id="@+id/closeTopBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_close"
+            android:contentDescription="닫기"
+            app:tint="@android:color/black"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+
+
+    <!-- 메모 입력 -->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="15"
+    android:layout_marginLeft="8dp"
+    android:gravity="center_vertical">
+
+    <EditText
+        android:id="@+id/editMemo"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_weight="15"
+        android:background="@android:drawable/edit_text"
+        android:gravity="top"
+        android:hint="메모를 입력하세요" />
+
+    <Space
+        android:layout_width="5dp"
+        android:layout_height="5dp" />
+
+    <ImageView
+        android:id="@+id/btnAddPhoto"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="8dp"
+        android:layout_gravity="bottom|start"
+        android:contentDescription="사진/동영상추가"
+        android:src="@drawable/icon_picture_add" />
+</LinearLayout>
+
+    <!-- 썸네일 RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mediaRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/material_dynamic_neutral90" />
+
+    <!-- 하단 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+
+        <!-- 공유 버튼 -->
+        <LinearLayout
+            android:id="@+id/btnShareView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="left"
+            android:padding="4dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imgShareView"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_btn_share"
+                android:contentDescription="공유하기" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="공유"
+                android:textSize="12sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- 등록 / 삭제 / 리셋 버튼 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddPet"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="41dp"
+            android:text="등록"
+            android:layout_marginEnd="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDeletePet"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="41dp"
+            android:text="삭제"
+            android:layout_marginEnd="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnResetForm"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="41dp"
+            android:text="리셋" />
+    </LinearLayout>
+</LinearLayout>

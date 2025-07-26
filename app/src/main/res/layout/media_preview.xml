@@ -1,0 +1,57 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 이미지 보기 -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:visibility="gone" />
+
+    <!-- 동영상 보기 -->
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <!-- 이전 버튼 (왼쪽 중앙) -->
+    <ImageButton
+        android:id="@+id/btnPrev"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical|start"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/bg_black_circle"
+        android:src="@android:drawable/ic_media_previous"
+        app:tint="#FFFFFF"
+        android:contentDescription="이전" />
+
+    <!-- 다음 버튼 (오른쪽 중앙) -->
+    <ImageButton
+        android:id="@+id/btnNext"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/bg_black_circle"
+        android:src="@android:drawable/ic_media_next"
+        app:tint="#FFFFFF"
+        android:contentDescription="다음" />
+
+    <!-- 닫기 버튼 -->
+    <ImageButton
+        android:id="@+id/btnClose"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="top|end"
+        android:layout_margin="30dp"
+        android:background="@android:color/transparent"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:tint="#000000"
+        android:contentDescription="닫기" />
+
+</FrameLayout>
